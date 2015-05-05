@@ -6,7 +6,7 @@ Strip all sensors but keeps acc sensor
 
 And allow to change advertise period by change this code in sensortag.py
 
-`py
+`
 tag.char_write_cmd(0x34,0xAA) 
 `
 
