@@ -2,12 +2,16 @@
 
 Base on this repo https://github.com/msaunby/ble-sensor-pi
 
-but strip all sensors but acc sensor
+Strip all sensors but keeps acc sensor
 
-and allow to change advertise period by change this code in sensortag.py
+And allow to change advertise period by change this code in sensortag.py
 
 `py
 tag.char_write_cmd(0x34,0xAA) 
 `
-change 0xAA to 0xFF will make the period shorter
 
+now the period is aboout 100ms
+
+change 0xAA to 0xFF will make the period to 150ms
+
+change to 0x01 will make the period to 1000ms
