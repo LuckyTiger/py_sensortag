@@ -113,8 +113,10 @@ class SensorCallbacks:
         (xyz,mag) = calcAccel(v[0],v[1],v[2])
         self.data['accl'] = xyz
         now = int(time.time())
-        f.write("ACCL" + xyz + "timestamp" + now + '\n')
+        f = open('acc_data2.txt', 'a')
+        f.write(str(xyz) + "," + str(now) + '\n')
         print "ACCL", xyz
+        f.close()
 
     def humidity(self, v):
         rawT = (v[1]<<8)+v[0]
@@ -153,8 +155,6 @@ class SensorCallbacks:
 def main():
     global datalog
     global barometer
-    global f
-    f = open('acc_data.txt', 'a')
 
     bluetooth_adr = sys.argv[1]
     #data['addr'] = bluetooth_adr
@@ -206,7 +206,7 @@ def main():
       tag.notification_loop()
      except:
       pass
-      f.close()
+
     f.close()
 
 if __name__ == "__main__":
