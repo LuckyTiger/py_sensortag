@@ -73,14 +73,16 @@ def main():
             now = time.time()
             now = "%.4f" % now
 
-            f = open('acc_data.txt', 'a')
+            f = open('acc_data2.txt', 'a')
             f.write(str(xyz) + "," + now + '\n')
-            print str(xyz) + "," + now + '\n'
+            #print str(xyz) + "," + now + '\n'
             f.close()
 
-            time.sleep(0.05)
+            time.sleep(0.0049)
         except:
             pass
 
     #print "x rotation: " , get_x_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
     #print "y rotation: " , get_y_rotation(accel_xout_scaled, accel_yout_scaled, accel_zout_scaled)
+if __name__ == "__main__":
+    main()
