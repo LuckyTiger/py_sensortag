@@ -112,7 +112,7 @@ class SensorCallbacks:
     def accel(self,v):
         (xyz,mag) = calcAccel(v[0],v[1],v[2])
         self.data['accl'] = xyz
-        now = int(time.time())
+        now = time.time()
         f = open('acc_data2.txt', 'a')
         f.write(str(xyz) + "," + str(now) + '\n')
         print "ACCL", xyz
