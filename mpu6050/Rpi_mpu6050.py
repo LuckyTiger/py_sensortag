@@ -8,7 +8,7 @@ import time
 power_mgmt_1 = 0x6b
 power_mgmt_2 = 0x6c
 
-bus = smbus.SMBus(0) # or bus = smbus.SMBus(1) for Revision 2 boards
+bus = smbus.SMBus(1) # or bus = smbus.SMBus(1) for Revision 2 boards
 address = 0x68       # This is the address value read via the i2cdetect command
 
 def read_byte(adr):
